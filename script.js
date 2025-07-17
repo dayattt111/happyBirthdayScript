@@ -139,7 +139,7 @@
                 // Change Gojo image
                 gojoImage.style.animation = 'none';
                 setTimeout(() => {
-                    gojoImage.src = 'https://i.ibb.co/0mHhSJ3/gojo2.png';
+                    gojoImage.src = 'img/img1.jpg';
                     gojoImage.style.animation = 'float 4s ease-in-out infinite';
                 }, 300);
                 
@@ -166,7 +166,7 @@
                 // Change Gojo image
                 gojoImage.style.animation = 'none';
                 setTimeout(() => {
-                    gojoImage.src = 'https://i.ibb.co/0sBzR7r/gojo3.png';
+                    gojoImage.src = 'img/img2.jpg';
                     gojoImage.style.animation = 'float 4s ease-in-out infinite';
                 }, 300);
                 
@@ -194,10 +194,10 @@
                 
                 setTimeout(() => {
                     const images = [
-                        'https://i.ibb.co/5Rc7tQc/gojo1.png',
-                        'https://i.ibb.co/0mHhSJ3/gojo2.png',
-                        'https://i.ibb.co/0sBzR7r/gojo3.png',
-                        'https://i.ibb.co/Zd8nM4s/gojo4.png'
+                        'img/Satoru_Gojo_arrives_on_the_battlefield_29.png',
+                        'img/img1.jpg',
+                        'img/img2.jpg',
+                        'img/img3.jpg'
                     ];
                     const randomImage = images[Math.floor(Math.random() * images.length)];
                     gojoImage.src = randomImage;
