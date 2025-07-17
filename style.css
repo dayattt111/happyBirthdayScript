@@ -96,18 +96,23 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #00f5d4, #00bbf9);
-            box-shadow: 0 0 20px #00f5d4;
-            animation: eye-glow 2s infinite alternate;
+            /* background: linear-gradient(45deg, #00f5d4, #00bbf9);
+            box-shadow: 0 0 20px #00f5d4; */
             z-index: 10;
         }
 
         .eye-left {
             left: 0;
+            background: linear-gradient(45deg, #00f5d4, #00bbf9);
+            box-shadow: 0 0 20px #00f5d4;
+            animation: eye-glow 2s infinite alternate;
         }
 
         .eye-right {
             right: 0;
+            background: linear-gradient(45deg, #b80101, #ff0000);
+            box-shadow: 0 0 20px #f50000;
+            animation: eye-glow2 2s infinite alternate;
         }
 
         .message-container {
@@ -318,6 +323,10 @@
         @keyframes eye-glow {
             0% { box-shadow: 0 0 10px #00f5d4; }
             100% { box-shadow: 0 0 30px #00f5d4, 0 0 50px #00bbf9; }
+        }
+        @keyframes eye-glow2 {
+            0% { box-shadow: 0 0 10px #ff1c1c; }
+            100% { box-shadow: 0 0 30px #ea0404, 0 0 50px #f70000; }
         }
 
         @keyframes border-animation {

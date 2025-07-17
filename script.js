@@ -1,7 +1,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Set birthday person name
             const urlParams = new URLSearchParams(window.location.search);
-            const name = urlParams.get('name') || 'Sahabatku';
+            const name = urlParams.get('name') || 'Kiki !!!';
             document.getElementById('birthdayName').textContent = name + '!';
             
             // Audio setup
