@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ulang Tahun Spesial - Tema Gojo Satoru</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>HBD !!</h1>
+    <!-- Background elements -->
+    <div class="purple-light" style="top: 10%; left: 20%;"></div>
+    <div class="purple-light" style="top: 70%; left: 80%;"></div>
+    <div class="purple-light" style="top: 40%; left: 60%;"></div>
+    
+    <div class="confetti-container" id="confettiContainer"></div>
+    
+    <div class="container">
+        <header>
+            <h1 class="gojo-title">Selamat Ulang Tahun</h1>
+            <h2 class="birthday-person" id="birthdayName">Sahabatku!</h2>
+        </header>
+        
+        <div class="gojo-container">
+            <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3e%3cpath fill='%239d4edd' d='M200 80c55 0 100 45 100 100s-45 100-100 100-100-45-100-100 45-100 100-100z'/%3e%3cpath fill='%23e0aaff' d='M200 10c-33 0-60 27-60 60 0 33 27 60 60 60s60-27 60-60c0-33-27-60-60-60z'/%3e%3cpath fill='%23f8f9fa' d='M150 180h100v200H150z'/%3e%3cpath fill='%233a0ca3' d='M130 380h140v70H130z'/%3e%3cpath fill='%237b2cbf' d='M100 450h200v40H100z'/%3e%3c/svg%3e" alt="Gojo Satoru" class="gojo-image">
+            <div class="infinity-eyes">
+                <div class="eye eye-left"></div>
+                <div class="eye eye-right"></div>
+            </div>
+        </div>
+        
+        <div class="message-container">
+            <p class="message">
+                Di hari spesialmu ini, kuucapkan selamat ulang tahun! Semoga tahun ini membawa kebahagiaan, keberhasilan, dan petualangan baru dalam hidupmu. Seperti Gojo Satoru dengan Limitless-nya, semoga kamu terus berkembang tanpa batas dan mencapai semua impianmu. 
+            </p>
+            <p class="message">
+                Terima kasih telah menjadi teman yang luar biasa. Kehadiranmu selalu seperti Domain Expansion yang membawa kemenangan di setiap situasi. Aku berharap kita bisa terus berteman dan membuat lebih banyak kenangan indah bersama. 
+            </p>
+            <p class="message">
+                Sekali lagi, selamat ulang tahun! Semoga kamu menjadi pribadi yang lebih kuat, lebih bijaksana, dan lebih bahagia di tahun ini. Cheers untuk petualangan baru!
+            </p>
+            <div class="signature">Dari temanmu,<br>Si Pembuat Website</div>
+        </div>
+        
+        <button class="cta-button" id="celebrationBtn">
+            <i class="fas fa-birthday-cake"></i> Rayakan!
+        </button>
+    </div>
+    
+    <div class="audio-control" id="audioControl">
+        <i class="fas fa-volume-up"></i>
+    </div>
+    
+    <footer>
+        <p>Dibuat dengan ❤️ menggunakan HTML, CSS, dan JavaScript | Tema Gojo Satoru</p>
+    </footer>
+    
+    <audio id="birthdayAudio" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
+    </audio>
+
+
 </body>
 </html>
