@@ -6,21 +6,25 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1a0526 0%, #2d0b42 50%, #1a0526 100%);
+            background: linear-gradient(135deg, #0a0412 0%, #1a0526 50%, #0a0412 100%);
             color: #f0e6ff;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(123, 44, 191, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(157, 78, 221, 0.15) 0%, transparent 20%);
         }
 
         .purple-light {
             position: fixed;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(157, 78, 221, 0.6) 0%, rgba(157, 78, 221, 0) 70%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(157, 78, 221, 0.4) 0%, rgba(157, 78, 221, 0) 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: -1;
+            animation: pulse 8s infinite alternate;
         }
 
         .container {
@@ -62,35 +66,40 @@
         .gojo-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto 40px;
             perspective: 1000px;
+            min-height: 400px;
         }
 
         .gojo-image {
             width: 100%;
-            max-width: 400px;
-            filter: drop-shadow(0 0 20px rgba(157, 78, 221, 0.7));
+            max-width: 500px;
+            filter: drop-shadow(0 0 25px rgba(157, 78, 221, 0.8));
             animation: float 4s ease-in-out infinite;
+            transition: transform 0.5s ease;
+            border-radius: 10px;
+            border: 3px solid #7b2cbf;
         }
 
         .infinity-eyes {
             position: absolute;
-            top: 38%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px;
-            height: 40px;
+            width: 100px;
+            height: 60px;
         }
 
         .eye {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: linear-gradient(45deg, #00f5d4, #00bbf9);
-            box-shadow: 0 0 15px #00f5d4;
+            box-shadow: 0 0 20px #00f5d4;
             animation: eye-glow 2s infinite alternate;
+            z-index: 10;
         }
 
         .eye-left {
@@ -102,7 +111,7 @@
         }
 
         .message-container {
-            background: rgba(45, 11, 66, 0.7);
+            background: rgba(20, 5, 36, 0.8);
             border: 2px solid #7b2cbf;
             border-radius: 20px;
             padding: 30px;
@@ -154,7 +163,7 @@
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            margin: 30px 0;
+            margin: 20px 10px;
             border: none;
             cursor: pointer;
             position: relative;
@@ -183,6 +192,48 @@
             left: 100%;
         }
 
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .action-button {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(45, 11, 66, 0.7);
+            border: 2px solid #7b2cbf;
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(123, 44, 191, 0.4);
+        }
+
+        .action-button:hover {
+            transform: translateY(-10px) scale(1.1);
+            background: rgba(123, 44, 191, 0.5);
+            box-shadow: 0 10px 25px rgba(123, 44, 191, 0.6);
+        }
+
+        .action-button i {
+            font-size: 40px;
+            color: #e0aaff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(224, 170, 255, 0.7);
+        }
+
+        .action-button span {
+            color: #e0aaff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
         .confetti-container {
             position: fixed;
             top: 0;
@@ -196,11 +247,24 @@
 
         .confetti {
             position: absolute;
-            width: 10px;
+            width: 12px;
             height: 20px;
             background: linear-gradient(45deg, #9d4edd, #e0aaff, #00f5d4, #7b2cbf);
             top: -20px;
             border-radius: 2px;
+        }
+
+        .domain-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 245, 212, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 1s ease;
         }
 
         .audio-control {
@@ -253,7 +317,7 @@
 
         @keyframes eye-glow {
             0% { box-shadow: 0 0 10px #00f5d4; }
-            100% { box-shadow: 0 0 25px #00f5d4, 0 0 40px #00bbf9; }
+            100% { box-shadow: 0 0 30px #00f5d4, 0 0 50px #00bbf9; }
         }
 
         @keyframes border-animation {
@@ -267,6 +331,33 @@
             100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
 
+        @keyframes domain-expand {
+            0% { transform: scale(0.1); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        @keyframes infinity-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        @keyframes slide-in {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slide-out {
+            0% { transform: translateX(0); opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+        }
+
         /* Responsiveness */
         @media (max-width: 768px) {
             .gojo-title { font-size: 3rem; }
@@ -274,10 +365,13 @@
             .message { font-size: 1.1rem; }
             .signature { font-size: 1.4rem; }
             .gojo-image { max-width: 300px; }
+            .action-button { width: 100px; height: 100px; }
         }
 
         @media (max-width: 480px) {
             .gojo-title { font-size: 2.2rem; }
             .birthday-person { font-size: 1.6rem; }
             .message-container { padding: 20px; }
+            .action-button { width: 80px; height: 80px; margin: 10px; }
+            .action-button i { font-size: 30px; }
         }

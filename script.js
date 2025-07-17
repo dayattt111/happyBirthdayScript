@@ -118,4 +118,102 @@
             }
             
             floatMessage();
+            
+            // Action buttons
+            const gojoImage = document.getElementById('gojoImage');
+            const domainEffect = document.getElementById('domainEffect');
+            const infinityBtn = document.getElementById('infinityBtn');
+            const domainBtn = document.getElementById('domainBtn');
+            const poseBtn = document.getElementById('poseBtn');
+            
+            // Infinity Button
+            infinityBtn.addEventListener('click', function() {
+                // Add visual effect
+                domainEffect.style.background = 'radial-gradient(circle, rgba(157, 78, 221, 0.4) 0%, transparent 70%)';
+                domainEffect.style.opacity = '1';
+                
+                // Rotate infinity symbol
+                const infinityIcon = infinityBtn.querySelector('i');
+                infinityIcon.style.animation = 'infinity-rotate 2s linear infinite';
+                
+                // Change Gojo image
+                gojoImage.style.animation = 'none';
+                setTimeout(() => {
+                    gojoImage.src = 'https://i.ibb.co/0mHhSJ3/gojo2.png';
+                    gojoImage.style.animation = 'float 4s ease-in-out infinite';
+                }, 300);
+                
+                // Add sound effect
+                if (audioEnabled) {
+                    const infinitySound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-magic-sparkles-3006.mp3');
+                    infinitySound.play();
+                }
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    domainEffect.style.opacity = '0';
+                    infinityIcon.style.animation = 'none';
+                }, 3000);
+            });
+            
+            // Domain Button
+            domainBtn.addEventListener('click', function() {
+                // Add visual effect
+                domainEffect.style.background = 'radial-gradient(circle, rgba(0, 245, 212, 0.4) 0%, transparent 70%)';
+                domainEffect.style.opacity = '1';
+                domainEffect.style.animation = 'domain-expand 2s forwards';
+                
+                // Change Gojo image
+                gojoImage.style.animation = 'none';
+                setTimeout(() => {
+                    gojoImage.src = 'https://i.ibb.co/0sBzR7r/gojo3.png';
+                    gojoImage.style.animation = 'float 4s ease-in-out infinite';
+                }, 300);
+                
+                // Add sound effect
+                if (audioEnabled) {
+                    const domainSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-ominous-drums-561.mp3');
+                    domainSound.play();
+                }
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    domainEffect.style.opacity = '0';
+                    domainEffect.style.animation = 'none';
+                }, 3000);
+            });
+            
+            // Pose Button
+            poseBtn.addEventListener('click', function() {
+                // Add visual effect
+                poseBtn.style.background = 'linear-gradient(45deg, #00f5d4, #00bbf9)';
+                poseBtn.style.transform = 'scale(1.1)';
+                
+                // Change Gojo image with sliding animation
+                gojoImage.style.animation = 'slide-out 0.5s forwards';
+                
+                setTimeout(() => {
+                    const images = [
+                        'https://i.ibb.co/5Rc7tQc/gojo1.png',
+                        'https://i.ibb.co/0mHhSJ3/gojo2.png',
+                        'https://i.ibb.co/0sBzR7r/gojo3.png',
+                        'https://i.ibb.co/Zd8nM4s/gojo4.png'
+                    ];
+                    const randomImage = images[Math.floor(Math.random() * images.length)];
+                    gojoImage.src = randomImage;
+                    gojoImage.style.animation = 'slide-in 0.5s forwards';
+                }, 500);
+                
+                // Add sound effect
+                if (audioEnabled) {
+                    const poseSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-quick-jump-arcade-game-239.mp3');
+                    poseSound.play();
+                }
+                
+                // Reset button after 1.5 seconds
+                setTimeout(() => {
+                    poseBtn.style.background = 'rgba(45, 11, 66, 0.7)';
+                    poseBtn.style.transform = 'translateY(0)';
+                }, 1500);
+            });
         });

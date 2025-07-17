@@ -6,7 +6,6 @@
     <title>Ulang Tahun Spesial - Tema Gojo Satoru</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Background elements -->
@@ -15,6 +14,7 @@
     <div class="purple-light" style="top: 40%; left: 60%;"></div>
     
     <div class="confetti-container" id="confettiContainer"></div>
+    <div class="domain-effect" id="domainEffect"></div>
     
     <div class="container">
         <header>
@@ -23,10 +23,25 @@
         </header>
         
         <div class="gojo-container">
-            <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3e%3cpath fill='%239d4edd' d='M200 80c55 0 100 45 100 100s-45 100-100 100-100-45-100-100 45-100 100-100z'/%3e%3cpath fill='%23e0aaff' d='M200 10c-33 0-60 27-60 60 0 33 27 60 60 60s60-27 60-60c0-33-27-60-60-60z'/%3e%3cpath fill='%23f8f9fa' d='M150 180h100v200H150z'/%3e%3cpath fill='%233a0ca3' d='M130 380h140v70H130z'/%3e%3cpath fill='%237b2cbf' d='M100 450h200v40H100z'/%3e%3c/svg%3e" alt="Gojo Satoru" class="gojo-image">
+            <img id="gojoImage" src="https://i.ibb.co/5Rc7tQc/gojo1.png" alt="Gojo Satoru" class="gojo-image">
             <div class="infinity-eyes">
                 <div class="eye eye-left"></div>
                 <div class="eye eye-right"></div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <div class="action-button" id="infinityBtn">
+                <i class="fas fa-infinity"></i>
+                <span>Infinity</span>
+            </div>
+            <div class="action-button" id="domainBtn">
+                <i class="fas fa-globe-asia"></i>
+                <span>Domain</span>
+            </div>
+            <div class="action-button" id="poseBtn">
+                <i class="fas fa-magic"></i>
+                <span>Pose</span>
             </div>
         </div>
         
@@ -60,8 +75,6 @@
         <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="script.js">
-    </script>
 
 </body>
 </html>
