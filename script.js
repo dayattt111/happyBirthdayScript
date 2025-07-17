@@ -77,7 +77,7 @@
                 
                 // Add sound effect
                 if (audioEnabled) {
-                    const celebrationSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-balloons-flying-away-1.mp3');
+                    const celebrationSound = new Audio('img/rpreplay_final1623689697_mov.mp3');
                     celebrationSound.play();
                 }
                 
@@ -145,7 +145,7 @@
                 
                 // Add sound effect
                 if (audioEnabled) {
-                    const infinitySound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-magic-sparkles-3006.mp3');
+                    const infinitySound = new Audio('img/rpreplay_final1623689697_mov.mp3');
                     infinitySound.play();
                 }
                 
@@ -172,7 +172,7 @@
                 
                 // Add sound effect
                 if (audioEnabled) {
-                    const domainSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-ominous-drums-561.mp3');
+                    const domainSound = new Audio('img/gojo-voice-pt-1.mp3');
                     domainSound.play();
                 }
                 
@@ -206,7 +206,7 @@
                 
                 // Add sound effect
                 if (audioEnabled) {
-                    const poseSound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-quick-jump-arcade-game-239.mp3');
+                    const poseSound = new Audio('img/gojo-voice-pt-1.mp3');
                     poseSound.play();
                 }
                 
